@@ -1,0 +1,42 @@
+<div>
+  <mat-progress-bar *ngIf="showSpinner" mode="indeterminate"></mat-progress-bar>
+</div>
+
+
+<div style="height: 100vh;">
+
+
+<mat-card class="shadow" style="padding: 5%; margin: 5%; text-align: center;" *ngIf="user">
+    <h1 style="text-align: center;">Update Your Info</h1>
+    <mat-divider>
+    </mat-divider>
+    <form (submit)="FormSubmit($event)" style="margin-top: 30px;">
+        <div>
+            <mat-form-field>
+                <mat-label>Name</mat-label>
+              <input matInput name="name" type="text" #name [(ngModel)]="user.name">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Email address</mat-label>
+              <input matInput name="email" type="email" #email placeholder="abc@example.com"  [(ngModel)]="user.email">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Phone Number</mat-label>
+              <input matInput  name="phone" type="tel" #nu [(ngModel)]="user.phone">
+            </mat-form-field>
+        </div>
+        <div>
+            <button mat-raised-button type="submit" color="primary" [disabled]="name.value == '' || email.value == '' || nu.value== '' || spin" ><span *ngIf="spin" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Update</button>
+           </div>
+      </form>
+
+      <div *ngIf="errorMsg" class="alert alert-danger" role="alert">
+        {{errorMsg}}
+      </div>
+</mat-card>
+
+</div>

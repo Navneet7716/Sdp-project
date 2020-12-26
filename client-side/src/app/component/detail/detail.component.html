@@ -1,0 +1,100 @@
+<div>
+    <mat-progress-bar *ngIf="showSpinner" mode="indeterminate"></mat-progress-bar>
+</div>
+<mat-card class="shadow mt-3 main__detail_card" style="padding: 5%;">
+
+<div *ngIf="propertyData">
+    
+<h1 style="text-align: center;font-style: italic;">"<span style="text-decoration: underline;">{{propertyData.name}}</span>"</h1>
+
+<div class="container2" > 
+    <img *ngFor="let item of propertyData.images" class="detail-card " src="https://realtor-7715.s3.amazonaws.com/{{item.split('.')[0]}}.webp">
+</div>
+
+<mat-tab-group mat-align-tabs="center" style="margin-top: 30px;">
+    <mat-tab label="Description"><mat-card class="shadow" style="text-align: center;padding: 2%; margin: 2%;">
+        <h1 style="text-align: center; padding: 2%;">Description</h1>
+        <article>
+            {{propertyData.description}}
+        </article>
+    </mat-card></mat-tab>
+    <mat-tab label="Specifications">
+        <mat-card class="shadow" style="text-align: center;padding: 2%;margin: 2%;">
+        <h1 style="text-align: center; padding: 2%;">Specifications</h1>
+        <article>
+            <p>Property Type: {{propertyData.specifications.Propertytype}}</p>
+            <p>Unit: {{propertyData.specifications.unit}}</p>
+            <p>Area: {{propertyData.specifications.area}}</p>
+            <h3>Starting Price ₹ {{propertyData.price / 10000000}} Cr.</h3>
+        </article>
+    </mat-card>
+    </mat-tab>
+    <mat-tab label="Address">
+        <mat-card class="shadow mt-3" style="margin: 2%;">
+            <h1 style="text-align: center;padding: 2%;">Address: {{ propertyData.address }}</h1>
+        </mat-card>
+    </mat-tab>
+    <mat-tab label="Owner Contact info">
+      <ng-container *ngIf="ownerId === userId; else elseTemplate">
+        <mat-card class="shadow mt-3" style="margin: 2%;">
+          <h1 style="text-align: center;padding: 2%;">You Are yourself the owner</h1>
+        </mat-card>
+      </ng-container>
+      <ng-template #elseTemplate>
+        <mat-card class="shadow mt-3" style="margin: 2%;" >
+          <h1 style="text-align: center;padding: 2%;">Click here to request for the owners contact info. If he is interested he will mail you back</h1>
+          <div style="text-align: center;">
+            <button mat-raised-button color="primary" (click)="requestContact()" [disabled]="!isEnabled">Click here to Request</button>
+
+          </div>
+          
+          <div class="d-flex justify-content-center mt-3" *ngIf="isSpin">
+            <div class="spinner-border" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+      </mat-card>
+      </ng-template>
+      
+       
+    </mat-tab>
+
+  </mat-tab-group>
+
+  <mat-card class="shadow mt-3 map" style="margin: 2%;">
+    <h1 style="text-align: center;">Location</h1>
+    
+
+    <app-map [parentData]="propertyData.location.coordinates"></app-map>
+</mat-card>
+
+
+
+   
+
+    <mat-card class="shadow" style="padding: 2%; text-align: center; margin: 2%">
+        <h1>List of dealers to contact</h1>   
+       </mat-card>
+       
+       <div class="container2"> 
+           
+           <mat-card *ngFor="let item of propertyData.dealers" class="mb-3 dealer-detail-card ">
+               <div >
+                 <div >
+                   <img src="../../../assets/images/users/{{item.photo}}" class="card-img rounded-circle" alt="...">
+                 </div>
+                 <div>
+                   <div class="card-body">
+                     <h5 class="card-title">{{item.name}}</h5>
+                     
+                     <p class="card-text">{{item.phone}}</p>
+                     <p class="card-text"><small class="text-muted">{{item.email}}</small></p>
+                   </div>
+                 </div>
+               </div>
+             </mat-card>
+       </div>
+</div>
+</mat-card>
+
+

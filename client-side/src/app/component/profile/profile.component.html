@@ -1,0 +1,46 @@
+<div>
+    <mat-progress-bar *ngIf="showSpinner" mode="indeterminate"></mat-progress-bar>
+</div>
+<div style="height: auto">
+
+    <mat-card class="main__card shadow animate__animated animate__fadeInUpBig" >
+    
+    
+    <div *ngIf="user">
+    
+    <div class="main__image">
+        <img src="{{imgurl}}{{user.photo}}" alt="" class="shadow">
+    </div>
+    
+    <mat-card class=" shadow user__info">
+        <p>Name: {{user.name}}</p>
+        <p>Email: {{user.email}}</p>
+        <p>Phone: {{user.phone}}</p>
+        <div style="text-align: center !important;">
+            <button mat-raised-button color="primary" [routerLink]="['/updateProfile']" style="margin: 2%;" >Update User Info</button>
+            <button mat-raised-button color="warn" [routerLink]="['/updatePassword']" >Update User Password</button>
+        
+        </div>
+       </mat-card> 
+    
+    
+    </div>
+    
+    </mat-card>
+    <mat-card class="mt-3 shadow" *ngIf="isOwner">
+        <mat-accordion>
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Owned Properties
+              </mat-panel-title>
+              <mat-panel-description>
+                You currently have {{ ownedProperties.length }} properties
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <app-owned-properties [parentData]="ownedProperties"></app-owned-properties>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-card>
+    
+</div>

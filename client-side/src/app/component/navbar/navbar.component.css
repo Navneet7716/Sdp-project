@@ -1,0 +1,24 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+.navbar___brand {
+  font-family: "Raleway", sans-serif;
+  
+}
+
+.navbar__color {
+  background-color: rgb(0, 0, 0);
+  opacity: .88;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar__button {
+  background-color: rgba(241, 241, 241, 0.137);
+  padding-top: 13px;
+  padding-bottom: 13px;
+  border: none !important;
+}

@@ -1,0 +1,20 @@
+.example-search-card {
+  /* min-height: 374px; */
+  max-height: 600px;
+  /* min-width: 342px; */
+  max-width: 374px;
+  flex: 1;
+  /* flex-basis: 27%; */
+  margin-bottom: 3%;
+  transition: 500ms;
+}
+
+.example-search-card:hover {
+  transform: scale(1.02);
+}
+
+.home__container__search {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
