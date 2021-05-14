@@ -4,6 +4,9 @@ This project is related to "real estate management system" in this project we bu
 They are able to see the details of each property and their prices. The user can sell or rent their property and they can upload the photos and details of their property.
 
 
+#Tech Stack used:- 
+Angular, mongodb, nodejs with Expressjs
+
 # Project URL :-
 https://redwood-realtor.herokuapp.com/home
 
