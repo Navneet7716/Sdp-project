@@ -6,3 +6,9 @@ They are able to see the details of each property and their prices. The user can
 
 # Project URL :-
 https://redwood-realtor.herokuapp.com/home
+
+# Screenshots :- 
+
+<p align="center">
+  <img src="./images/ss.png" width="350" title="hover text">
+</p>
