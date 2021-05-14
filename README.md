@@ -12,11 +12,13 @@ Angular, mongodb, nodejs with Expressjs
 # Project URL :-
 https://redwood-realtor.herokuapp.com/home
 
-# Screenshots :- 
 
+# Home Page :-
 <p align="center">
   <img src="./images/ss.png" width="auto" title="Home page">
 </p>
+
+# User Profile Page :-
 <p align="center">
   <img src="./images/Screenshot_2021-05-14 RedWood Realtors.png" width="auto" title="Home page">
 </p>
