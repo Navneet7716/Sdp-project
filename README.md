@@ -17,3 +17,6 @@ https://redwood-realtor.herokuapp.com/home
 <p align="center">
   <img src="./images/ss.png" width="auto" title="Home page">
 </p>
+<p align="center">
+  <img src="./images/Screenshot_2021-05-14 RedWood Realtors.png" width="auto" title="Home page">
+</p>
