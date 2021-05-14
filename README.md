@@ -10,5 +10,5 @@ https://redwood-realtor.herokuapp.com/home
 # Screenshots :- 
 
 <p align="center">
-  <img src="./images/ss.png" width="350" title="hover text">
+  <img src="./images/ss.png" width="auto" title="hover text">
 </p>
